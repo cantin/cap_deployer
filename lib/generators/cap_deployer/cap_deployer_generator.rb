@@ -4,7 +4,7 @@ class CapDeployerGenerator < Rails::Generators::Base
   def cap_deploy
     @arg = Hash.new
     @arg['repo'] = ask "Enter your git repository: "
-    @arg['server_domain'] = ask 'Enter your server domain: '
+    @arg['role'] = ask 'Enter your role: '
 
     template 'deploy.erb', 'config/deploy.rb', @arg
     capify!
